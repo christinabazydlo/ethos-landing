@@ -1,6 +1,20 @@
+# build output
 .next/
-node_modules/
 out/
-.superpowers/
+
+# dependencies
+node_modules/
+
+# environment / secrets
 .env
 .env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# system
+.DS_Store
+
+# tools
+.superpowers/
+.vercel
