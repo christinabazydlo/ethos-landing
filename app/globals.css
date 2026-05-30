@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #FAFAF8;
+  --color-surface: #F2EFE8;
+  --color-divider: #E8E4DC;
+  --color-primary: #2D4A3E;
+  --color-primary-hover: #243d33;
+  --color-accent: #C4973B;
+  --color-text: #1A1A1A;
+  --color-muted: #6B6B6B;
+}
+
+:root {
+  --font-jakarta: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+::selection {
+  background-color: #e8f0ec;
+}
+
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: var(--font-jakarta);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-jakarta);
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Fingerprint draw-in animation */
+@keyframes drawIn {
+  from { stroke-dashoffset: var(--dash-len); }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(196,151,59,0.3)); }
+  50%       { filter: drop-shadow(0 0 12px rgba(196,151,59,0.6)); }
+}
+
+[data-animate] {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+[data-animate="1"] { animation-delay: 0s; }
+[data-animate="2"] { animation-delay: 0.12s; }
+[data-animate="3"] { animation-delay: 0.24s; }
+[data-animate="4"] { animation-delay: 0.36s; }
+[data-animate="5"] { animation-delay: 0.48s; }
+[data-animate="6"] { animation-delay: 0.60s; }
+
+@keyframes scrollUp {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] { animation: none; opacity: 1; }
+  * { animation: none !important; }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #1A1A1A 0%, #C4973B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes phoneScroll {
+  0%,  8%  { transform: translateY(0); }
+  82%, 100% { transform: translateY(-42%); }
+}
+
+@keyframes loadBar {
+  0%   { width: 0%; }
+  15%  { width: 20%; }
+  40%  { width: 45%; }
+  70%  { width: 72%; }
+  90%  { width: 91%; }
+  100% { width: 100%; }
+}
+
+@keyframes pageLoad {
+  0%   { width: 0%; }
+  30%  { width: 40%; }
+  60%  { width: 70%; }
+  85%  { width: 90%; }
+  100% { width: 100%; }
+}
+
+@keyframes drawInGold {
+  0%   { stroke-dashoffset: 2000; opacity: 0; }
+  8%   { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+@keyframes fpFadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
