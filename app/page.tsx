@@ -1,39 +1,21 @@
 import AnimatedPhone from "@/components/AnimatedPhone";
 import TraitBreakdown from "@/components/TraitBreakdown";
 import FingerprintPattern from "@/components/FingerprintPattern";
-import AnimatedFingerprint from "@/components/AnimatedFingerprint";
+import FingerprintReveal from "@/components/FingerprintReveal";
+import NavLinks from "@/components/NavLinks";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FAFAF8] font-[family-name:var(--font-jakarta)] overflow-x-hidden">
 
-      {/* Page-load progress bar */}
-      <div className="fixed top-0 left-0 right-0 z-[60]" style={{ height: 2, background: "#E8E4DC" }}>
-        <div style={{ height: "100%", background: "#C4973B", animation: "pageLoad 1.2s ease-out forwards" }} />
-      </div>
-
       {/* ── Nav ── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FAFAF8]/90 backdrop-blur-sm border-b border-[#E8E4DC]" style={{ marginTop: 2 }}>
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <FingerprintPattern size={28} stroke="#1A1A1A" />
-            <span className="font-bold text-[#1A1A1A] text-lg tracking-tight">Ethos</span>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FAFAF8]/90 backdrop-blur-sm border-b border-[#E8E4DC]">
+        <div className="max-w-6xl mx-auto px-16 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-1">
+            <img src="/ethos-logo-icon.png" alt="" style={{ height: 28, width: "auto" }} />
+            <span className="text-[#1A1A1A] text-xl tracking-tight" style={{ fontFamily: "var(--font-cormorant)", fontWeight: 700 }}>Ethos</span>
           </div>
-          <div className="hidden md:flex items-center gap-8">
-            {[
-              { href: "#fingerprint", label: "The Fingerprint" },
-              { href: "#traits",      label: "Trait Breakdown" },
-              { href: "#features",    label: "Features" },
-              { href: "#pricing",     label: "Pricing" },
-            ].map(({ href, label }) => (
-              <a key={href} href={href} className="relative overflow-hidden h-5 group flex items-start">
-                <div className="flex flex-col transition-transform duration-500 ease-out group-hover:-translate-y-5">
-                  <span className="text-sm h-5 flex items-center text-[#6B6B6B]">{label}</span>
-                  <span className="text-sm h-5 flex items-center text-[#C4973B]">{label}</span>
-                </div>
-              </a>
-            ))}
-          </div>
+          <NavLinks />
           <a href="#waitlist" className="bg-[#1A1A1A] text-[#FAFAF8] text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#333] transition-colors">
             Join the waitlist
           </a>
@@ -41,11 +23,11 @@ export default function Home() {
       </nav>
 
       {/* ── Hero ── */}
-      <section className="relative pt-24 pb-0 overflow-hidden min-h-screen flex items-center">
+      <section className="relative pt-24 pb-24 overflow-hidden min-h-screen flex items-center">
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle, #C4973B 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#FAFAF8] to-transparent" />
 
-        <div className="relative max-w-6xl mx-auto px-6 w-full">
+        <div className="relative max-w-6xl mx-auto px-16 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
             {/* Left — copy */}
@@ -70,7 +52,7 @@ export default function Home() {
               </h1>
 
               <p className="text-lg text-[#6B6B6B] leading-relaxed mb-8 max-w-md" data-animate="3">
-                Most apps track what you&apos;ve read. Ethos understands how you read — voice, prose style, moral texture — and finds books that actually fit.
+                Most apps track what you&apos;ve read. Ethos understands how you read: voice, prose style, moral texture, and finds books that actually fit.
               </p>
 
               <form
@@ -95,7 +77,7 @@ export default function Home() {
             </div>
 
             {/* Right — animated iPhone */}
-            <div className="flex justify-center lg:justify-end pb-10" data-animate="5">
+            <div className="flex justify-center lg:justify-end pb-10 lg:translate-x-12" data-animate="5">
               <AnimatedPhone />
             </div>
           </div>
@@ -104,59 +86,56 @@ export default function Home() {
 
       {/* ── Fingerprint Section (dark) ── */}
       <section id="fingerprint" className="bg-[#222222] py-24 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-            {/* Fingerprint illustration */}
-            <div className="flex justify-center lg:justify-start order-2 lg:order-1">
-              <div className="relative flex items-center justify-center" style={{ width: 260, height: 260 }}>
-                {/* Ambient glow */}
-                <div className="absolute inset-0 rounded-full blur-3xl opacity-20" style={{ background: "radial-gradient(ellipse, #C4973B 0%, transparent 70%)" }} />
+            {/* Fingerprint illustration — centered in its column */}
+            <div className="flex justify-center order-2 lg:order-1">
+              <div className="relative flex items-center justify-center">
+                <div className="absolute inset-0 rounded-full blur-3xl opacity-25" style={{ background: "radial-gradient(ellipse, #C4973B 0%, transparent 70%)" }} />
                 <div className="relative z-10">
-                  <AnimatedFingerprint size={220} />
+                  <FingerprintReveal size={230} />
                 </div>
               </div>
             </div>
 
             {/* Text */}
             <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 border border-[#333] rounded-full px-4 py-1.5 mb-6">
+              <div className="inline-flex items-center gap-2 border border-[#C4973B]/50 rounded-full px-4 py-1.5 mb-6">
                 <span className="text-xs font-semibold text-[#C4973B] tracking-wide uppercase">The fingerprint</span>
               </div>
-
               <h2 className="text-4xl font-extrabold text-[#FAFAF8] mb-6 leading-tight">
                 It&apos;s not what you&apos;ve read. It&apos;s how you read.
               </h2>
-
               <p className="text-[#aaa] leading-relaxed mb-8">
-                Ethos builds your literary fingerprint from the books you love — analyzing
+                Ethos builds your literary fingerprint from the books you love, analyzing
                 voice, theme, moral texture, and emotional register to understand
                 how you read, not just what you&apos;ve read.
               </p>
-
               <ul className="space-y-5">
                 {[
                   { title: "Built from your taste", body: "Rate books, build your library, and Ethos constructs a fingerprint that captures your sensibility at depth." },
                   { title: "Evolves with you", body: "Add more books and your fingerprint sharpens. Rebuild it anytime as your reading life changes." },
-                  { title: "Every reader gets a character", body: "Sherlock Holmes, Jay Gatsby, Atticus Finch — your fingerprint maps to a literary archetype that reflects how you read." },
+                  { title: "Every reader gets a character", body: "Sherlock Holmes, Jo March, Jay Gatsby, Atticus Finch. Your fingerprint maps to a literary archetype that reflects how you read." },
                 ].map(({ title, body }) => (
                   <li key={title} className="flex gap-4">
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#C4973B]" />
                     <div>
-                      <span className="font-semibold text-[#FAFAF8]">{title} — </span>
+                      <span className="font-semibold text-[#FAFAF8]">{title}. </span>
                       <span className="text-[#888] text-sm">{body}</span>
                     </div>
                   </li>
                 ))}
               </ul>
             </div>
+
           </div>
         </div>
       </section>
 
       {/* ── Trait Breakdown ── */}
       <section id="traits" className="bg-[#F2EFE8] py-24">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-extrabold text-[#1A1A1A] mb-5 leading-tight">
@@ -164,12 +143,12 @@ export default function Home() {
               </h2>
               <p className="text-[#6B6B6B] leading-relaxed mb-6">
                 Your fingerprint isn&apos;t a black box. Ethos breaks it down into the
-                specific traits that define how you read — atmosphere, prose style,
+                specific traits that define how you read: atmosphere, prose style,
                 character depth, and more.
               </p>
               <p className="text-[#6B6B6B] leading-relaxed">
                 Every recommendation traces back to something real in your fingerprint.
-                Not &ldquo;readers like you also enjoyed&rdquo; — your specific sensibility, mapped.
+                Not &ldquo;readers like you also enjoyed.&rdquo; Your specific sensibility, mapped.
               </p>
             </div>
             <div>
@@ -181,10 +160,10 @@ export default function Home() {
 
       {/* ── Features ── */}
       <section id="features" className="bg-[#FAFAF8] py-24">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-16">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1A1A] mb-4">Built for readers who take it seriously.</h2>
-            <p className="text-[#6B6B6B] max-w-sm mx-auto text-sm">Everything you need to track what you love, discover what fits, and understand your own taste.</p>
+            <p className="text-[#6B6B6B] max-w-sm mx-auto text-base">Everything you need to track what you love, discover what fits, and understand your own taste.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -192,7 +171,7 @@ export default function Home() {
               {
                 icon: <FingerprintPattern size={22} stroke="#2D4A3E" strokeWidth={1.5} />,
                 title: "Your Literary Fingerprint",
-                body: "Ethos reads how you respond to voice, pacing, theme, and emotional tone — then maps that into a fingerprint that's uniquely yours.",
+                body: "Ethos reads how you respond to voice, pacing, theme, and emotional tone, then maps that into a fingerprint that&apos;s uniquely yours.",
               },
               {
                 icon: (
@@ -225,13 +204,13 @@ export default function Home() {
             ))}
           </div>
 
-          <p className="text-center text-sm text-[#6B6B6B] mt-10">More features on the way. We&apos;re just getting started.</p>
+          <p className="text-center text-base font-semibold text-[#6B6B6B] mt-10">More features on the way. We&apos;re just getting started.</p>
         </div>
       </section>
 
       {/* ── Pricing ── */}
       <section id="pricing" className="bg-[#F2EFE8] py-24">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-16">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1A1A] mb-4">Simple pricing.</h2>
             <p className="text-[#6B6B6B] mb-8">Start free. Go deeper when you&apos;re ready.</p>
@@ -251,7 +230,7 @@ export default function Home() {
               <ul className="space-y-3 flex-1">
                 {[
                   "Your literary fingerprint",
-                  "Trait breakdown — see what shapes your taste",
+                  "Trait breakdown: see what shapes your taste",
                   "Your character archetype",
                   "3 recommendations to start",
                   "Track reads and want-to-reads",
@@ -280,7 +259,7 @@ export default function Home() {
               <ul className="space-y-3 flex-1">
                 {[
                   "Everything in Free",
-                  "Fresh set of 14 recommendations every month",
+                  "14 recommendations every month, swap out ones that don't fit",
                   "Recommendations update when you add 5 or more books",
                   "Rebuild your fingerprint as your taste evolves",
                   "Buy individual refreshes for $0.99 if you prefer",
@@ -300,15 +279,30 @@ export default function Home() {
 
       {/* ── Footer ── */}
       <footer className="bg-[#1A1A1A] py-16">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <FingerprintPattern size={32} stroke="#C4973B" />
-            <div>
-              <div className="font-bold text-[#FAFAF8] text-base">Ethos</div>
-              <div className="text-xs text-[#6B6B6B]">Recommendations built on your literary fingerprint.</div>
+        <div className="max-w-6xl mx-auto px-16 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col items-start gap-3">
+            <div className="flex items-center gap-1">
+              <img src="/ethos-logo-icon.png" alt="" style={{ height: 28, width: "auto", filter: "brightness(0) invert(1)", marginLeft: "-6px" }} />
+              <span className="text-[#FAFAF8] text-xl tracking-tight" style={{ fontFamily: "var(--font-cormorant)", fontWeight: 700 }}>Ethos</span>
             </div>
+            <div className="text-xs text-[#6B6B6B]">Recommendations built on your literary fingerprint.</div>
           </div>
-          <p className="text-xs text-[#6B6B6B]">&copy; {new Date().getFullYear()} Ethos. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <a
+              href="https://instagram.com/readethos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-xs text-[#6B6B6B] hover:text-[#C4973B] transition-colors"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+              </svg>
+              @readethos
+            </a>
+            <p className="text-xs text-[#6B6B6B]">&copy; {new Date().getFullYear()} Ethos. All rights reserved.</p>
+          </div>
         </div>
       </footer>
 

@@ -16,9 +16,35 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Ethos — Book recommendations built on your literary fingerprint",
+  title: "Ethos: Book recommendations built on your literary fingerprint",
   description:
-    "Ethos maps your taste at the level of voice, theme, and sensibility — then finds books that actually fit.",
+    "Ethos maps your taste at the level of voice, theme, and sensibility, then finds books that actually fit. Join the waitlist.",
+  metadataBase: new URL("https://readethos.app"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Ethos: Book recommendations built on your literary fingerprint",
+    description:
+      "Ethos maps your taste at the level of voice, theme, and sensibility, then finds books that actually fit.",
+    url: "https://readethos.app",
+    siteName: "Ethos",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ethos: Book recommendations built on your literary fingerprint",
+    description:
+      "Ethos maps your taste at the level of voice, theme, and sensibility, then finds books that actually fit.",
+  },
+  keywords: [
+    "book recommendations",
+    "literary fingerprint",
+    "personalized reading",
+    "book discovery app",
+    "reading taste",
+    "character archetype",
+  ],
 };
 
 export default function RootLayout({
