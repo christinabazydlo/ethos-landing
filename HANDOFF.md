@@ -117,21 +117,72 @@ Credit packs (IAP, not shown as a separate tier): 1 refresh $0.99, 5 refreshes $
 
 ---
 
-## Recent Changes (2026-05-28 session)
-- Hero subtext updated: "Most apps track what you've read. Ethos understands how you read — voice, prose style, moral texture — and finds books that actually fit."
-- Dark section headline updated: "It's not what you've read. It's how you read."
-- Nav links: roll-up hover animation (same as christinabaz.com portfolio) — gray text flips up to reveal gold (#C4973B) on hover, 500ms ease-out
-- AnimatedPhone loading bar: moved from `top: 59.5%` to `top: 52%` on the analyzing screen
+## Recent Changes (2026-05-30 session)
+
+### Navigation
+- Logo: replaced generic SVG fingerprint with `ethos-logo-icon.png` + Cormorant Garamond "Ethos" wordmark, gap tightened to `gap-1`
+- Links: bumped to `font-semibold`, extracted to `components/NavLinks.tsx` (client component) with custom smooth scroll (cubic easing, 900ms, 64px nav offset)
+- Removed page-load gold progress bar
+
+### Fingerprint Section (dark)
+- Replaced `AnimatedFingerprint` with `FingerprintReveal` (`components/FingerprintReveal.tsx`)
+- Animation source: `data/fingerprint-scan.json` (Lottie JSON, 19-path fingerprint, 10s draw-in via trim paths)
+- Colors changed directly in JSON: `#1b1b1b` → `#C4973B` gold (114 values replaced)
+- After animation completes: crossfades to archetype reveal card (Sherlock Holmes, Cormorant Garamond, 3.2s hold), then loops. Fade duration 1.2s.
+- Lottie rendered at 2.5x container size, cropped via overflow:hidden to zoom in on the fingerprint
+- Section layout: animation centered in left column (removed `lg:justify-start`), text right
+
+### Copy
+- All em dashes removed from body copy (replaced with commas, colons, or periods)
+- Bullet separators changed from colon to period
+- Jo March added to character archetype list alongside Sherlock Holmes, Jay Gatsby, Atticus Finch
+- Pricing: "Fresh set of 14 recommendations every month" → "14 recommendations every month, swap out ones that don't fit"
+- Features body text: `text-sm` → `text-base`
+- "More features on the way": `text-sm` → `text-base font-semibold`
+
+### Layout
+- Side padding: `px-6` → `px-16` across all sections
+- Hero: `pb-0` → `pb-24`, iPhone nudged right with `lg:translate-x-12`
+- Pricing section: `max-w-4xl` → `max-w-6xl` so card text fits on one line
+- Fingerprint badge border: `border-[#333]` → `border-[#C4973B]/50`
+
+### Footer
+- Logo: `ethos-logo-icon.png` + Cormorant "Ethos" in white, tagline below (`flex-col items-start gap-3`)
+- Instagram link added: `@readethos` → `https://instagram.com/readethos`
+
+### SEO / Metadata (`app/layout.tsx`)
+- Domain set to `readethos.app`
+- Open Graph tags added (title, description, url, siteName, type)
+- Twitter card added
+- Keywords added
+- Em dashes removed from title and description
+
+---
+
+## Notes for Engineer Review
+
+**Architecture decisions to validate:**
+
+1. **Lottie animation approach** — `FingerprintReveal.tsx` imports the Lottie JSON as a module (`data/fingerprint-scan.json`), renders via `lottie-react`, uses overflow/crop to zoom in on the fingerprint within the canvas. Colors were changed directly in the JSON rather than via CSS filter. Review whether the 2.5x scale + overflow crop is the right approach or if modifying the Lottie viewBox would be cleaner.
+
+2. **NavLinks as client component** — `components/NavLinks.tsx` is a `"use client"` component extracted from `page.tsx` (which is a server component) purely to support the `onClick` smooth scroll handlers. Validate this is the right split.
+
+3. **Smooth scroll implementation** — custom `easeInOutCubic` + `requestAnimationFrame` in `NavLinks.tsx`. Confirm this is preferable to native `scroll-behavior: smooth` (which is also set in `globals.css` as a fallback) given Next.js App Router behavior.
+
+4. **Static export compatibility** — stack is Next.js with `output: 'export'`. All components must be compatible with static export (no server-side data fetching, no API routes). `FingerprintReveal` and `NavLinks` are both `"use client"` — confirm no issues.
+
+5. **Unused components** — `ArchetypePhone.tsx`, `PhoneMockup.tsx`, `EthosLogo.tsx` are safe to delete. Not imported anywhere.
+
+---
 
 ## Known Issues / To Do
-- **Not deployed yet** — site runs at localhost:3001, needs Vercel deploy + custom domain (ethosreads.com or similar)
-- **Fingerprint animation**: needs a real detailed SVG source. Current 20-path version is functional but not as dense as a real fingerprint. User likes the Dribbble style (shot 6384142 — sequential arc trace). Find a detailed SVG fingerprint from SVGRepo or similar, share as .svg file.
-- `screen-reveal.png` still shows "Jane Eyre" — baked screenshot, would need manual re-export from Pencil (export_nodes consistently fails)
+- **Not deployed yet** — deploy to Netlify, connect `readethos.app` domain
+- `screen-reveal.png` still shows "Jane Eyre" — needs re-export from Pencil
 - `ArchetypePhone.tsx`, `PhoneMockup.tsx`, `EthosLogo.tsx` — unused, safe to delete
-- Domain `ethosreads.com` — not yet purchased
 - Pricing `$4.99/mo` is a placeholder until confirmed in RevenueCat
-- Nav links are desktop-only (hidden on mobile) — no mobile nav/hamburger yet
-- Logo has `-12px` left margin to compensate for transparent padding in PNG; if logo is replaced this may need adjustment
+- Nav links are desktop-only — no mobile nav/hamburger yet
+- Footer logo (`ethos-logo-icon.png`) has transparent PNG padding; compensated with `marginLeft: -6px` — may need adjustment if logo changes
+- Instagram account `@readethos` not yet created — handle is available
 
 ---
 
