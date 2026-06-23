@@ -40,8 +40,10 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 className="text-lg font-bold mb-3">How Your Data Is Processed</h2>
-            <p>Building your literary fingerprint and generating recommendations requires sending your reading history (book titles, authors, ratings, and notes) to Anthropic, the company that provides the AI model we use. Anthropic processes this data to generate your fingerprint and recommendations and does not use it to train their models. No other AI provider receives your reading data.</p>
+            <h2 className="text-lg font-bold mb-3">How AI Is Used to Process Your Data</h2>
+            <p className="mb-3">Building your literary fingerprint and generating recommendations requires sending your reading history (book titles, authors, ratings, and notes) to Anthropic&apos;s Claude models, the AI we use to do this. Anthropic processes this data to generate your fingerprint and recommendations and does not use it to train their models. No other AI provider receives your reading data.</p>
+            <p className="mb-3"><strong>Your fingerprint, archetype, and recommendations are AI-generated.</strong> They are produced automatically, without a person reviewing your individual results before you see them. This is a form of automated profiling: the AI looks at patterns in your reading history to infer things like your preferred pacing, tone, and themes, and uses that to pick books and a literary archetype for you.</p>
+            <p>This processing is for personalization and entertainment only. It does not make or inform any decision that affects your legal rights, finances, employment, insurance, or access to any service, it only decides what book recommendations to show you. Because AI processing is how Ethos fundamentally works, there isn&apos;t a separate way to opt out of it while keeping the rest of the app working; if you&apos;d rather not have your reading history processed this way, you can delete your account at any time (see &quot;Data Retention and Deletion&quot; below).</p>
           </section>
 
           <section>

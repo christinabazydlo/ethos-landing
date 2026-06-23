@@ -44,7 +44,8 @@ export default function Terms() {
 
           <section>
             <h2 className="text-lg font-bold mb-3">Content and Recommendations</h2>
-            <p>Book recommendations, your literary fingerprint, and your archetype are generated based on the data you provide and are intended for personal entertainment and discovery purposes. We don&apos;t guarantee the accuracy, completeness, or suitability of any recommendation.</p>
+            <p className="mb-3">Book recommendations, your literary fingerprint, and your archetype are AI-generated using Anthropic&apos;s Claude models based on the data you provide, and are intended for personal entertainment and discovery purposes. They are produced automatically, without human review of your individual results, and are not a professional or editorial endorsement of any title.</p>
+            <p>We don&apos;t guarantee the accuracy, completeness, or suitability of any recommendation. AI output can be wrong, outdated, or simply not to your taste, use your own judgment about what to read. See our Privacy Policy for how your data is processed to generate these results.</p>
           </section>
 
           <section>
