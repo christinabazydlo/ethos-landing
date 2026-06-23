@@ -67,7 +67,7 @@ export default function AnimatedFingerprint({ size = 220 }: { size?: number }) {
             key={i}
             vectorEffect="non-scaling-stroke"
             d={d}
-            stroke="#C4973B"
+            stroke="#D4AF37"
             strokeWidth={2}
             opacity={0.07}
           />
@@ -94,7 +94,7 @@ export default function AnimatedFingerprint({ size = 220 }: { size?: number }) {
             key={i}
             vectorEffect="non-scaling-stroke"
             d={d}
-            stroke="#C4973B"
+            stroke="#D4AF37"
             strokeWidth={2}
             style={{
               strokeDasharray: 2000,

@@ -149,13 +149,13 @@ function HomeScreen() {
       {/* Featured book */}
       <div className="mx-4 mb-3 rounded-xl overflow-hidden flex" style={{ background: "#2d3a2d", height: 110 }}>
         <div className="flex-1 p-3 flex flex-col justify-end">
-          <div className="text-[#C4973B] text-[8px] font-bold uppercase tracking-wider mb-1">Featured Pick</div>
+          <div className="text-[#D4AF37] text-[8px] font-bold uppercase tracking-wider mb-1">Featured Pick</div>
           <div className="text-[#FAFAF8] text-[11px] font-bold leading-tight">The Secret History</div>
           <div className="text-[#FAFAF8]/60 text-[8px]">Donna Tartt</div>
         </div>
         <div className="w-20 relative">
           <div className="absolute inset-2 rounded-lg bg-[#1a2a1a] flex items-center justify-center">
-            <div className="w-1 h-8 bg-[#C4973B] opacity-40 rounded-full" />
+            <div className="w-1 h-8 bg-[#D4AF37] opacity-40 rounded-full" />
           </div>
         </div>
       </div>
@@ -208,7 +208,7 @@ function FingerprintScreen() {
           <defs>
             <linearGradient id="fp2" x1="20" y1="20" x2="100" y2="100" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stopColor="#2D4A3E" />
-              <stop offset="100%" stopColor="#C4973B" />
+              <stop offset="100%" stopColor="#D4AF37" />
             </linearGradient>
           </defs>
           {[11, 18, 25, 32, 39, 46].map((r, i) => (
@@ -224,7 +224,7 @@ function FingerprintScreen() {
           ))}
           <text x="60" y="66" textAnchor="middle" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="18" fontWeight="800" fill="url(#fp2)">E</text>
         </svg>
-        <div className="text-[#C4973B] text-[11px] font-bold">Sherlock Holmes</div>
+        <div className="text-[#D4AF37] text-[11px] font-bold">Sherlock Holmes</div>
         <div className="text-[#6B6B6B] text-[9px] mt-0.5">Your literary character</div>
       </div>
 
@@ -239,7 +239,7 @@ function FingerprintScreen() {
               <span className="text-[#FAFAF8] text-[9px] font-semibold">{label}</span>
             </div>
             <div className="h-1 bg-[#2a2a2a] rounded-full overflow-hidden">
-              <div className="h-full rounded-full" style={{ width: `${pct}%`, background: "linear-gradient(90deg, #2D4A3E, #C4973B)" }} />
+              <div className="h-full rounded-full" style={{ width: `${pct}%`, background: "linear-gradient(90deg, #1A1A1A, #D4AF37)" }} />
             </div>
           </div>
         ))}

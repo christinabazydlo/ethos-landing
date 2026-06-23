@@ -6,7 +6,7 @@ export default function ArchetypePhone() {
       {/* Glow */}
       <div
         className="absolute inset-0 rounded-[46px] blur-3xl opacity-20"
-        style={{ background: "radial-gradient(ellipse, #C4973B 0%, transparent 70%)", transform: "scale(1.15)" }}
+        style={{ background: "radial-gradient(ellipse, #D4AF37 0%, transparent 70%)", transform: "scale(1.15)" }}
       />
 
       {/* Phone frame — silver */}
@@ -45,17 +45,17 @@ export default function ArchetypePhone() {
           <EthosLogo size={40} className="mb-3" />
 
           {/* Label */}
-          <p className="text-[#C4973B] text-[9px] font-bold tracking-[0.2em] uppercase mb-4">
+          <p className="text-[#D4AF37] text-[9px] font-bold tracking-[0.2em] uppercase mb-4">
             Your Literary Archetype
           </p>
 
           {/* Character name */}
-          <h2 className="text-[42px] font-extrabold text-[#C4973B] leading-none mb-3 text-center" style={{ fontFamily: "Georgia, serif" }}>
+          <h2 className="text-[42px] font-extrabold text-[#D4AF37] leading-none mb-3 text-center" style={{ fontFamily: "Georgia, serif" }}>
             Sherlock Holmes
           </h2>
 
           {/* Divider */}
-          <div className="w-16 h-px bg-[#C4973B]/40 mb-4" />
+          <div className="w-16 h-px bg-[#D4AF37]/40 mb-4" />
 
           {/* Description */}
           <p className="text-[#FAFAF8] text-[11px] italic text-center leading-relaxed mb-4 px-1">
@@ -75,7 +75,7 @@ export default function ArchetypePhone() {
           <div className="w-full px-2 pb-8">
             <div
               className="w-full py-3.5 rounded-2xl flex items-center justify-center"
-              style={{ background: "#C4973B" }}
+              style={{ background: "#D4AF37" }}
             >
               <span className="text-[#111] text-[12px] font-bold">Discover your full profile</span>
             </div>

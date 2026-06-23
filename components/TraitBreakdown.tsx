@@ -33,7 +33,7 @@ export default function TraitBreakdown() {
         return <line key={t.label} x1={cx} y1={cy} x2={outer.x} y2={outer.y} stroke="#D8D2C8" strokeWidth="1" />;
       })}
 
-      <polygon points={dataPolygon} fill="#C4973B" fillOpacity="0.2" stroke="#C4973B" strokeWidth="2" strokeLinejoin="round" />
+      <polygon points={dataPolygon} fill="#D4AF37" fillOpacity="0.2" stroke="#D4AF37" strokeWidth="2" strokeLinejoin="round" />
 
       {traits.map((t) => {
         const p = point(t.angle, maxR * t.value);

@@ -79,10 +79,10 @@ export default function FingerprintReveal({ size = 380 }: { size?: number }) {
           pointerEvents: "none",
         }}
       >
-        <FingerprintPattern size={42} stroke="#C4973B" strokeWidth={1.5} />
+        <FingerprintPattern size={42} stroke="#D4AF37" strokeWidth={1.5} />
         <p
           className="mt-4 text-center font-semibold tracking-[0.15em] uppercase"
-          style={{ color: "#C4973B", fontSize: "0.65rem" }}
+          style={{ color: "#D4AF37", fontSize: "0.65rem" }}
         >
           Your Literary Archetype
         </p>
@@ -93,7 +93,7 @@ export default function FingerprintReveal({ size = 380 }: { size?: number }) {
             fontStyle: "italic",
             fontWeight: 600,
             fontSize: `${size * 0.38}px`,
-            color: "#C4973B",
+            color: "#D4AF37",
           }}
         >
           Sherlock<br />Holmes

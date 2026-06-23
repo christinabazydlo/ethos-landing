@@ -31,7 +31,7 @@ export default function AnimatedPhone() {
     <div className="relative mx-auto" style={{ width: 280, height: 570 }}>
       {/* Ambient glow */}
       <div className="absolute inset-0 rounded-[46px] blur-3xl opacity-30"
-        style={{ background: "radial-gradient(ellipse, #C4973B 0%, transparent 70%)", transform: "scale(1.2)" }} />
+        style={{ background: "radial-gradient(ellipse, #D4AF37 0%, transparent 70%)", transform: "scale(1.2)" }} />
 
       {/* Frame */}
       <div className="absolute inset-0 rounded-[46px] shadow-2xl"
@@ -94,7 +94,7 @@ export default function AnimatedPhone() {
         {isAnalyze && visible && (
           <div className="absolute flex gap-1" style={{ top: "52%", left: 20, right: 20, zIndex: 20 }}>
             <div className="flex-1 rounded-full overflow-hidden" style={{ height: 3, background: "#333" }}>
-              <div style={{ height: "100%", background: "#C4973B", animation: "loadBar 3.8s ease-in-out forwards" }} />
+              <div style={{ height: "100%", background: "#D4AF37", animation: "loadBar 3.8s ease-in-out forwards" }} />
             </div>
             <div className="flex-1 rounded-full" style={{ height: 3, background: "#333" }} />
           </div>

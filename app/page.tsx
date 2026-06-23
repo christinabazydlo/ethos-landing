@@ -24,30 +24,23 @@ export default function Home() {
 
       {/* ── Hero ── */}
       <section className="relative pt-24 pb-24 overflow-hidden min-h-screen flex items-center">
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle, #C4973B 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle, #D4AF37 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#FAFAF8] to-transparent" />
 
         <div className="relative max-w-6xl mx-auto px-16 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
             {/* Left — copy */}
-            <div>
-              {/* Logo */}
-              <div className="block mb-6" data-animate="1">
-                <img src="/ethos-logo.png" alt="Ethos" style={{ height: 160, width: "auto", marginLeft: "-12px" }} />
-              </div>
-
+            <div className="relative z-10">
               <div className="inline-flex items-center gap-2 bg-[#F2EFE8] border border-[#E8E4DC] rounded-full px-4 py-2 mb-7" data-animate="1">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]" />
                 <span className="text-xs font-semibold text-[#1A1A1A] tracking-wide uppercase">Join the waitlist</span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl font-extrabold text-[#1A1A1A] leading-[1.15] tracking-tight mb-5" data-animate="2">
-                <span className="block whitespace-nowrap">Book recommendations</span>
-                <span className="block whitespace-nowrap font-bold">built on your{" "}
-                  <span style={{ fontFamily: "var(--font-cormorant)", fontStyle: "italic", fontWeight: 600, color: "#C4973B", fontSize: "1.1em" }}>
-                    literary fingerprint.
-                  </span>
+                <span className="block">Book recommendations</span>
+                <span className="block">built on your{" "}
+                  <span style={{ color: "#D4AF37" }}>literary fingerprint.</span>
                 </span>
               </h1>
 
@@ -74,6 +67,7 @@ export default function Home() {
                   Join the waitlist
                 </button>
               </form>
+              <p className="text-xs text-[#6B6B6B] mt-3" data-animate="4">Your reading data stays private. Never shared.</p>
             </div>
 
             {/* Right — animated iPhone */}
@@ -92,7 +86,7 @@ export default function Home() {
             {/* Fingerprint illustration — centered in its column */}
             <div className="flex justify-center order-2 lg:order-1">
               <div className="relative flex items-center justify-center">
-                <div className="absolute inset-0 rounded-full blur-3xl opacity-25" style={{ background: "radial-gradient(ellipse, #C4973B 0%, transparent 70%)" }} />
+                <div className="absolute inset-0 rounded-full blur-3xl opacity-25" style={{ background: "radial-gradient(ellipse, #D4AF37 0%, transparent 70%)" }} />
                 <div className="relative z-10">
                   <FingerprintReveal size={230} />
                 </div>
@@ -101,8 +95,8 @@ export default function Home() {
 
             {/* Text */}
             <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 border border-[#C4973B]/50 rounded-full px-4 py-1.5 mb-6">
-                <span className="text-xs font-semibold text-[#C4973B] tracking-wide uppercase">The fingerprint</span>
+              <div className="inline-flex items-center gap-2 border border-[#D4AF37]/50 rounded-full px-4 py-1.5 mb-6">
+                <span className="text-xs font-semibold text-[#D4AF37] tracking-wide uppercase">The fingerprint</span>
               </div>
               <h2 className="text-4xl font-extrabold text-[#FAFAF8] mb-6 leading-tight">
                 It&apos;s not what you&apos;ve read. It&apos;s how you read.
@@ -119,7 +113,7 @@ export default function Home() {
                   { title: "Every reader gets a character", body: "Sherlock Holmes, Jo March, Jay Gatsby, Atticus Finch. Your fingerprint maps to a literary archetype that reflects how you read." },
                 ].map(({ title, body }) => (
                   <li key={title} className="flex gap-4">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#C4973B]" />
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#D4AF37]" />
                     <div>
                       <span className="font-semibold text-[#FAFAF8]">{title}. </span>
                       <span className="text-[#888] text-sm">{body}</span>
@@ -178,7 +172,7 @@ export default function Home() {
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D4A3E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="8" r="4" />
                     <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-                    <path d="M18 3.5l.6 1.8H20.5l-1.5 1.1.6 1.8-1.6-1.1-1.6 1.1.6-1.8L15.5 5.3H17.4z" stroke="#C4973B" fill="#C4973B" />
+                    <path d="M18 3.5l.6 1.8H20.5l-1.5 1.1.6 1.8-1.6-1.1-1.6 1.1.6-1.8L15.5 5.3H17.4z" stroke="#D4AF37" fill="#D4AF37" />
                   </svg>
                 ),
                 title: "Your Character Archetype",
@@ -189,7 +183,7 @@ export default function Home() {
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D4A3E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
                     <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-                    <path d="M12 7v4M10 9h4" stroke="#C4973B" />
+                    <path d="M12 7v4M10 9h4" stroke="#D4AF37" />
                   </svg>
                 ),
                 title: "Your Reading Life, Catalogued",
@@ -246,26 +240,26 @@ export default function Home() {
             </div>
 
             {/* Premium */}
-            <div className="rounded-2xl p-8 flex flex-col relative overflow-hidden border border-[#C4973B]/40"
+            <div className="rounded-2xl p-8 flex flex-col relative overflow-hidden border border-[#D4AF37]/40"
               style={{ background: "linear-gradient(160deg, #1E1A12 0%, #2A2416 100%)" }}>
-              <div className="absolute top-4 right-4 bg-[#C4973B] text-[#1A1A1A] text-xs font-bold px-3 py-1 rounded-full">
+              <div className="absolute top-4 right-4 bg-[#D4AF37] text-[#1A1A1A] text-xs font-bold px-3 py-1 rounded-full">
                 Premium
               </div>
               <div className="mb-6">
-                <div className="text-xs font-semibold text-[#C4973B] uppercase tracking-widest mb-2">Premium</div>
+                <div className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest mb-2">Premium</div>
                 <div className="text-4xl font-extrabold text-[#FAFAF8]">$4.99</div>
                 <div className="text-sm text-[#FAFAF8]/50 mt-1">per month · or $34.99/yr</div>
               </div>
               <ul className="space-y-3 flex-1">
                 {[
                   "Everything in Free",
-                  "14 recommendations every month, swap out ones that don't fit",
+                  "15 recommendations monthly, swap out what doesn't fit",
                   "Recommendations update when you add 5 or more books",
                   "Rebuild your fingerprint as your taste evolves",
                   "Buy individual refreshes for $0.99 if you prefer",
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm text-[#FAFAF8]">
-                    <svg className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#C4973B]" viewBox="0 0 16 16" fill="none">
+                    <svg className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#D4AF37]" viewBox="0 0 16 16" fill="none">
                       <path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     {f}
@@ -292,7 +286,7 @@ export default function Home() {
               href="https://instagram.com/readethos"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-xs text-[#6B6B6B] hover:text-[#C4973B] transition-colors"
+              className="flex items-center gap-2 text-xs text-[#6B6B6B] hover:text-[#D4AF37] transition-colors"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -301,6 +295,8 @@ export default function Home() {
               </svg>
               @readethos
             </a>
+            <a href="/privacy" className="text-xs text-[#6B6B6B] hover:text-[#D4AF37] transition-colors">Privacy</a>
+            <a href="/terms" className="text-xs text-[#6B6B6B] hover:text-[#D4AF37] transition-colors">Terms</a>
             <p className="text-xs text-[#6B6B6B]">&copy; {new Date().getFullYear()} Ethos. All rights reserved.</p>
           </div>
         </div>

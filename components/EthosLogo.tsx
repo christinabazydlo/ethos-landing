@@ -18,7 +18,7 @@ export default function EthosLogo({ size = 48, className = "" }: EthosLogoProps)
       <defs>
         <linearGradient id="fpG" x1="20" y1="20" x2="100" y2="100" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor="#2D4A3E" />
-          <stop offset="100%" stopColor="#C4973B" />
+          <stop offset="100%" stopColor="#D4AF37" />
         </linearGradient>
       </defs>
 

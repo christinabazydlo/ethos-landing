@@ -43,7 +43,7 @@ export default function NavLinks() {
         >
           <div className="flex flex-col transition-transform duration-500 ease-out group-hover:-translate-y-5">
             <span className="text-sm font-semibold h-5 flex items-center text-[#6B6B6B]">{label}</span>
-            <span className="text-sm font-semibold h-5 flex items-center text-[#C4973B]">{label}</span>
+            <span className="text-sm font-semibold h-5 flex items-center text-[#D4AF37]">{label}</span>
           </div>
         </button>
       ))}

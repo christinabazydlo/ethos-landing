@@ -10,7 +10,7 @@ html {
   --color-divider: #E8E4DC;
   --color-primary: #2D4A3E;
   --color-primary-hover: #243d33;
-  --color-accent: #C4973B;
+  --color-accent: #D4AF37;
   --color-text: #1A1A1A;
   --color-muted: #6B6B6B;
 }
@@ -82,7 +82,7 @@ p {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #1A1A1A 0%, #C4973B 100%);
+  background: linear-gradient(135deg, #1A1A1A 0%, #D4AF37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
