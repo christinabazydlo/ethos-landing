@@ -1,6 +1,5 @@
 import AnimatedPhone from "@/components/AnimatedPhone";
 import TraitBreakdown from "@/components/TraitBreakdown";
-import FingerprintPattern from "@/components/FingerprintPattern";
 import FingerprintReveal from "@/components/FingerprintReveal";
 import NavLinks from "@/components/NavLinks";
 
@@ -38,14 +37,14 @@ export default function Home() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl font-extrabold text-[#1A1A1A] leading-[1.15] tracking-tight mb-5" data-animate="2">
-                <span className="block">Book recommendations</span>
-                <span className="block">built on your{" "}
-                  <span style={{ color: "#D4AF37" }}>literary fingerprint.</span>
+                <span className="block">Never wonder</span>
+                <span className="block">what to{" "}
+                  <span style={{ color: "#D4AF37" }}>read next.</span>
                 </span>
               </h1>
 
               <p className="text-lg text-[#6B6B6B] leading-relaxed mb-8 max-w-md" data-animate="3">
-                Most apps track what you&apos;ve read. Ethos understands how you read: voice, prose style, moral texture, and finds books that actually fit.
+                Most apps wait for you to ask. Ethos builds a literary fingerprint from how you read, not just what, so your next book is ready before you&apos;ve finished this one.
               </p>
 
               <form
@@ -68,6 +67,7 @@ export default function Home() {
                 </button>
               </form>
               <p className="text-xs text-[#6B6B6B] mt-3" data-animate="4">Your reading data stays private. Never shared.</p>
+              <p className="text-xs text-[#6B6B6B] mt-1" data-animate="4">First 20 members get an extended free trial.</p>
             </div>
 
             {/* Right — animated iPhone */}
@@ -163,20 +163,25 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                icon: <FingerprintPattern size={22} stroke="#2D4A3E" strokeWidth={1.5} />,
-                title: "Your Literary Fingerprint",
-                body: "Ethos reads how you respond to voice, pacing, theme, and emotional tone, then maps that into a fingerprint that&apos;s uniquely yours.",
+                icon: (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D4A3E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3.5 2" stroke="#D4AF37" />
+                  </svg>
+                ),
+                title: "Always Know What's Next",
+                body: "Finish a book and your next one is already waiting. Ethos keeps fresh recommendations ready so you're never sitting there wondering what to read.",
               },
               {
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D4A3E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="8" r="4" />
-                    <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-                    <path d="M18 3.5l.6 1.8H20.5l-1.5 1.1.6 1.8-1.6-1.1-1.6 1.1.6-1.8L15.5 5.3H17.4z" stroke="#D4AF37" fill="#D4AF37" />
+                    <path d="M12 3v12" />
+                    <path d="M7 10l5 5 5-5" />
+                    <path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3" stroke="#D4AF37" />
                   </svg>
                 ),
-                title: "Your Character Archetype",
-                body: "Every reader maps to a literary character. Discover yours and understand something true about the way you move through a book.",
+                title: "Bring Your Existing Library",
+                body: "Already tracking your reads elsewhere? Bring your library over in one import, no starting from zero.",
               },
               {
                 icon: (
@@ -186,8 +191,8 @@ export default function Home() {
                     <path d="M12 7v4M10 9h4" stroke="#D4AF37" />
                   </svg>
                 ),
-                title: "Your Reading Life, Catalogued",
-                body: "Log what you've finished, save what's next. Every book you add sharpens your fingerprint and improves every recommendation.",
+                title: "Track Your Reading Life",
+                body: "Read, Want to Read, DNF. Every book you log sharpens your fingerprint and improves every recommendation.",
               },
             ].map(({ icon, title, body }) => (
               <div key={title} className="bg-[#F2EFE8] rounded-2xl p-8 border border-[#E8E4DC]">
@@ -280,6 +285,7 @@ export default function Home() {
               <span className="text-[#FAFAF8] text-xl tracking-tight" style={{ fontFamily: "var(--font-cormorant)", fontWeight: 700 }}>Ethos</span>
             </div>
             <div className="text-xs text-[#6B6B6B]">Recommendations built on your literary fingerprint.</div>
+            <div className="text-xs text-[#6B6B6B]">Your data is never sold, shown to advertisers, or used to train AI models.</div>
           </div>
           <div className="flex items-center gap-6">
             <a
