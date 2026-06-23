@@ -44,7 +44,7 @@ export default function Home() {
               </h1>
 
               <p className="text-lg text-[#6B6B6B] leading-relaxed mb-8 max-w-md" data-animate="3">
-                Most apps track what you&apos;ve read. Ethos builds a literary fingerprint from how you read, so you always have the next book ready.
+                Most apps track what you&apos;ve read. Ethos builds a literary fingerprint from how you read, so you always have your next book ready.
               </p>
 
               <form
