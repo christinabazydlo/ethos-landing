@@ -5,6 +5,7 @@ const links = [
   { href: "traits",      label: "Trait Breakdown" },
   { href: "features",    label: "Features" },
   { href: "pricing",     label: "Pricing" },
+  { href: "faq",         label: "FAQ" },
 ];
 
 function smoothScrollTo(id: string) {
