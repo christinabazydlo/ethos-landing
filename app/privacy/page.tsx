@@ -55,6 +55,7 @@ export default function Privacy() {
               <li><strong>Apple</strong> processes Sign in with Apple and any App Store purchases. We never see your Apple ID password or payment details.</li>
               <li><strong>RevenueCat</strong> manages subscription status so we know whether your account is on Premium. They receive your subscription status, not your payment information.</li>
               <li><strong>Buttondown</strong> stores waitlist email addresses, if you joined before the app launched.</li>
+              <li><strong>Google Books</strong> (and Open Library as a fallback) receives book titles and authors to retrieve cover images and metadata. Only title and author data is sent, never your account information or reading history.</li>
             </ul>
             <p className="mt-3">We do not share your data with advertisers or data brokers. We do not sell your data.</p>
           </section>

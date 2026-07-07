@@ -67,7 +67,7 @@ export default function Home() {
                 </button>
               </form>
               <p className="text-xs text-[#6B6B6B] mt-3" data-animate="4">Your reading data stays private. Never shared.</p>
-              <p className="text-xs text-[#6B6B6B] mt-1" data-animate="4">First 20 members get an extended free trial.</p>
+              <p className="text-xs text-[#6B6B6B] mt-1" data-animate="4">The first 20 people to create an account get founding member status and an extended free trial.</p>
             </div>
 
             {/* Right — animated iPhone */}
@@ -110,7 +110,7 @@ export default function Home() {
                 {[
                   { title: "Built from your taste", body: "Rate books, build your library, and Ethos constructs a fingerprint that captures your sensibility at depth." },
                   { title: "Evolves with you", body: "Add more books and your fingerprint sharpens. Rebuild it anytime as your reading life changes." },
-                  { title: "Every reader gets a character", body: "Sherlock Holmes, Jo March, Jay Gatsby, Atticus Finch. Your fingerprint maps to a literary archetype that reflects how you read." },
+                  { title: "Every reader gets a character", body: "Sherlock Holmes, Elizabeth Bennet, Jay Gatsby, Atticus Finch. Your fingerprint maps to a literary archetype that reflects how you read." },
                 ].map(({ title, body }) => (
                   <li key={title} className="flex gap-4">
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#D4AF37]" />
@@ -258,10 +258,9 @@ export default function Home() {
               <ul className="space-y-3 flex-1">
                 {[
                   "Everything in Free",
-                  "15 recommendations monthly, swap out what doesn't fit",
-                  "Recommendations update when you add 5 or more books",
+                  "15 fresh recommendations weekly, swap out what doesn't fit",
+                  "Rebuild your fingerprint anytime after adding 5+ new books",
                   "Rebuild your fingerprint as your taste evolves",
-                  "Buy individual refreshes for $0.99 if you prefer",
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm text-[#FAFAF8]">
                     <svg className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#D4AF37]" viewBox="0 0 16 16" fill="none">
